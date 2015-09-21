@@ -26,5 +26,10 @@ setup(
     author_email='lisovoy.a.s@gmail.com',
     url='https://github.com/AlexLisovoy/teco.git',
     license='MIT',
-    packages=find_packages()
+    packages=find_packages(),
+    entry_points={
+          'console_scripts': [
+              'teco = teco.__main__:main'
+          ]
+      },
 )

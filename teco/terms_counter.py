@@ -45,7 +45,7 @@ class TermsCounter:
         """
         len_text = len(text)
         term_len = len(term)
-        offsets = 0
+        words = 0
         k = 0
         # we need store previous symbol to determine when starting the
         # word or sequence of newline
@@ -68,7 +68,7 @@ class TermsCounter:
                 if (not prev_el or not prev_el.isalnum()) or k > 0:
                     k = k + 1
             if k == term_len:
-                offsets += 1
+                words += 1
                 # we should reset k to avoid overlaps
                 # need to check, maybe we can use only suffix for
                 # generating partial match table
@@ -76,7 +76,7 @@ class TermsCounter:
 
             prev_el = lower_char(text[i])
 
-        return offsets
+        return words
 
     def get_terms(self):
         """
