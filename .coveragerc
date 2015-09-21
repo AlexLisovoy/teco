@@ -1,0 +1,19 @@
+[run]
+branch = True
+cover_pylib = False
+source = teco, tests
+
+
+[html]
+directory = coverage
+
+[report]
+precision = 2
+show_missing = True
+exclude_lines =
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run:
+    if __name__ == .__main__.:
