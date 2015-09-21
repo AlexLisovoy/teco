@@ -22,6 +22,9 @@ class TermsCounter:
     def _generate_pmt(self, term):
         """
         Generates partial match table for term.
+
+        The complexity of the table algorithm is O(k), where k is the
+        length of term.
         """
         len_term = len(term)
         pi = [0] * len_term  # prefix index
@@ -42,6 +45,11 @@ class TermsCounter:
          - search sequence separated by any number of space-like characters
          - search sequence separated by only one newline characters
          - search is not case sensitive
+
+        Efficiency of the search algorithm is O(n), where n is the
+        length of text.
+
+        Total complexity of the overall algorithm is O(n + k) for one term.
         """
         len_text = len(text)
         term_len = len(term)
